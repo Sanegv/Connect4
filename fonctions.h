@@ -52,7 +52,17 @@ void tour_humains(char** grille, char joueur);
 bool check_victoire(char** grille);
 
 /**
+ * @brief vérifie que la grille n'est pas pleine (ne regarde que la ligne en haut, le reste est inutile)
+ * 
+ * @param grille 
+ * @return true 
+ * @return false 
+ */
+bool check_plein(char** grille);
+
+/**
  * @brief appelle toutes les fonctions nécessaires pour faire une partie entre deux humains
  * 
  */
 void jeu_humains();
+
