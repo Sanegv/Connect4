@@ -1,3 +1,5 @@
+#ifndef DEF_FONCTIONS_CONNECT4
+#define DEF_FONCTIONS_CONNECT4
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -66,3 +68,4 @@ bool check_plein(char** grille);
  */
 void jeu_humains();
 
+#endif

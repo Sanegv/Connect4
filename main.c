@@ -1,8 +1,8 @@
-#include "fonctions.h"
+#include "AI.h"
 
 int main(){
-	char** grille = init_grille();
-	jeu_humains();
-	free_grille(grille);
+	time_t t;
+	srand((unsigned)time(&t));
+	menu();
 	return 0;
 }
