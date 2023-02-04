@@ -68,4 +68,12 @@ bool check_plein(char** grille);
  */
 void jeu_humains();
 
+/**
+ * @brief supprime le jeton en haut de la colonne indiquée en entrée et le renvoie, ou renvoie 0 si la colonne est vide
+ * 
+ * @param grille 
+ * @param colonne 
+ */
+char pop(char** grille, int colonne);
+
 #endif

@@ -1,19 +1,20 @@
 #include "fonctions.h"
 
 char** init_grille(){
-	char** grille = malloc(6*sizeof(char*));
+	char** grille = malloc(6*sizeof(char*)); //initialise les lignes
 	if(!grille) exit(1);
+
 	for(int i = 0; i < 6; i++){
-		grille[i] = calloc(7,sizeof(char));
+		grille[i] = calloc(7,sizeof(char)); //les remplit de 0
 		if(!grille[i]) exit(1);
 	}
 
-	return grille;
+	return grille; //renvoie le tout
 }
 
 void free_grille(char** grille){
-	for(int i = 0; i < 6; i++) free(grille[i]);
-	free(grille);
+	for(int i = 0; i < 6; i++) free(grille[i]); //libère toutes les lignes
+	free(grille); //puis les colonnes
 }
 
 void print_grille(char** grille){
@@ -119,4 +120,17 @@ bool check_plein(char** grille){
 		if(!grille[5][i]) return false;
 	}
 	return true;
+}
+
+char pop(char** grille, int colonne){
+	int jeton = 0;
+	for(int i = 5; i >= 0; i--){ //on parcourt la colonne de haut en bas
+		if(grille[i][colonne]) {
+			jeton = grille[i][colonne]; //si il y a un jeton, on le sauvegarde pour le renvoyer
+			grille[i][colonne] = 0; //et on le retire de la colonne
+			return jeton;
+		}
+	}
+
+	return jeton;
 }
