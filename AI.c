@@ -51,3 +51,26 @@ int choix_tour(){
     if(choix == 3) return rand()%2;
     return (choix%2)+1; //si le joueur veut être j1, renvoie 2 (pour l'ia), et inversement
 }
+
+int find_max(int* table){
+    int max = 0;
+    for(int i = 1; i < 7; i++) if(table[i] > table[max]) max = i; //max prend la valeur de l'index de la case contenant l'int le plus haut
+    return max; 
+}
+
+int find_min(int* table){
+    int min = 0;
+    for(int i = 1; i < 7; i++) if(table[i] < table[min]) min = i; //min prend la valeur de l'index de la case contenant l'int le plus bas
+    return min; 
+}
+
+int sum(int* table){
+    int sum = 0;
+    for(int i = 0; i < 7; i++) sum += table[i];
+    return sum;
+}
+
+bool check_equal(int* table){
+    for(int i = 1; i < 7; i++) if(table[i] != table[i-1]) return false;
+    return true;
+}
