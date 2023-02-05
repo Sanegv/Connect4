@@ -37,7 +37,7 @@ int choix_tour();
  * 
  * @param depth 
  */
-void jeu_ia_minmax(int depth);
+void jeu_ia_minmax(int depth, int ia);
 
 /**
  * @brief joue un tour en plaçant le char de l'ia à la meilleure position pour la profondeur donnée
